@@ -1,0 +1,24 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[user]
+	email = lev.h.justin@gmail.com
+	name = justin
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+[push]
+	default = simple
+	followTags = true
+[merge]
+	tool = nvim -d
+	conflictstyle = diff3
+	prompt = false
+[mergetool]
+	keepBackup = false
+[core]
+	editor = nvim
