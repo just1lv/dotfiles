@@ -17,7 +17,7 @@ uninstall_package (){
 
 if [ $# -eq 0 ]
 then
-    PACKAGES=$(find . -mindepth 1 -maxdepth 1 -type d -print | sed s,./,,g)
+    PACKAGES=$(find . -mindepth 1 -maxdepth 1 -type d -print | sed s,./,,g | grep -v '.git')
 else
     PACKAGES="$@"
 fi
