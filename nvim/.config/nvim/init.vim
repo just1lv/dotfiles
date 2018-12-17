@@ -12,6 +12,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }   " Dark powered asynchronous completion framework for neovim/Vim8
 Plug 'w0rp/ale'                                                 " Asynchronous Lint Engine
 Plug 'scrooloose/nerdcommenter'                                 " Vim plugin for intensely orgasmic commenting
+Plug 'SirVer/ultisnips'                                         " Snippets made easy (<Tab>)
+Plug 'honza/vim-snippets'                                       " Default snippets
 
 " Plug 'vim-latex/vim-latex'                      " Enhanced LaTeX support for Vim
 Plug 'lervag/vimtex'                            " A modern vim plugin for editing LaTeX files
@@ -33,18 +35,27 @@ filetype plugin on                              " file type plugin
 filetype indent on                              " file type indent
 syntax on                                       " syntax to be loaded for current buffer
 let mapleader=','                               " To define a mapping which uses the mapleader variable
-let g:deoplete#enable_at_startup=1              " enable deoplete
-let g:deoplete#auto_complete_delay=100          " delay completion
-let g:deoplete#enable_smart_case=1              " no ignore case when pattern has uppercase
-let g:deoplete#min_pattern_length=3             " number of input completion 
+
+" Syntax checking
 let g:ale_enabled=1                             " enable ale
 let g:ale_lint_on_text_changed=0                " do not check at text change
 let g:ale_lint_on_insert_leave=1                " check when leave insert mode
+
+" Commenting
 let g:NERDSpaceDelims = 1                       " Add spaces after comment delimiters by default
 let g:NERDCompactSexyComs = 1                   " Use compact syntax for prettified multi-line comments
 let g:NERDDefaultAlign = 'left'                 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDCommentEmptyLines = 1                 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDTrimTrailingWhitespace = 1            " Enable trimming of trailing whitespace when uncommenting
+
+" Auto completion
+let g:deoplete#enable_at_startup=1              " enable deoplete
+let g:deoplete#auto_complete_delay=100          " delay completion
+let g:deoplete#enable_smart_case=1              " no ignore case when pattern has uppercase
+let g:deoplete#min_pattern_length=3             " number of input completion 
+let g:UltiSnipsExpandTrigger="<TAB>"
+let g:UltiSnipsJumpForwardTrigger="<TAB>"
+let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
 " -----------------------------------------------------------------------------
 " Edit setting
@@ -83,7 +94,7 @@ hi IncSearch cterm=NONE ctermbg=Yellow ctermfg=Black
 " -----------------------------------------------------------------------------
 " Shortcut/Mapping
 "remap C-n to tab for deoplete
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " down is really next line
 nnoremap j gj
@@ -125,3 +136,20 @@ let g:tex_conceal="ab"                          " Latex conceal
 " git config
 set updatetime=10       " vim-gitgutter: update time
 
+let g:tex_flavor = 'latex'       " use latex flavor instead of plaintex
+if !exists('g:deoplete#omni#input_patterns')
+    let g:deoplete#omni#input_patterns = {}
+endif
+let g:deoplete#omni#input_patterns.tex = '\\(?:'
+    \ .  '\w*cite\w*(?:\s*\[[^]]*\]){0,2}\s*{[^}]*'
+    \ . '|\w*ref(?:\s*\{[^}]*|range\s*\{[^,}]*(?:}{)?)'
+    \ . '|hyperref\s*\[[^]]*'
+    \ . '|includegraphics\*?(?:\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+    \ . '|(?:include(?:only)?|input)\s*\{[^}]*'
+    \ . '|\w*(gls|Gls|GLS)(pl)?\w*(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
+    \ . '|includepdf(\s*\[[^]]*\])?\s*\{[^}]*'
+    \ . '|includestandalone(\s*\[[^]]*\])?\s*\{[^}]*'
+    \ . '|usepackage(\s*\[[^]]*\])?\s*\{[^}]*'
+    \ . '|documentclass(\s*\[[^]]*\])?\s*\{[^}]*'
+    \ . '|\w*'
+\ .')'
