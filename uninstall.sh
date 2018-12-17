@@ -24,5 +24,5 @@ fi
 
 for PACKAGE in $PACKAGES
 do
-    install_package $PACKAGE
+    uninstall_package $PACKAGE
 done
