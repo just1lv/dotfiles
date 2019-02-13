@@ -10,7 +10,7 @@
 	br = branch
 	ci = commit
 	st = status
-	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+	ig = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 [push]
 	default = simple
 	followTags = true
