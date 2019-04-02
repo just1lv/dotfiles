@@ -103,6 +103,9 @@ nnoremap k gk
 " easy escape to normal mode
 imap jj <esc>
 
+" exit terminal mode
+tnoremap jj <C-\><C-n>
+
 " new line
 nnoremap <C-O> O<esc>
 nnoremap <C-o> o<esc>
