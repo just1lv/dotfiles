@@ -15,7 +15,7 @@
 	default = simple
 	followTags = true
 [merge]
-	tool = nvim -d
+	tool = vimdiff
 	conflictstyle = diff3
 	prompt = false
 [mergetool]
