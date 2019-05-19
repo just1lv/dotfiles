@@ -10,6 +10,7 @@ Plug 'vim-airline/vim-airline'                  " Lean & mean status/tabline for
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }   " Dark powered asynchronous completion framework for neovim/Vim8
+Plug 'deoplete-plugins/deoplete-jedi'                           " Deoplete.nvim source for Python
 Plug 'w0rp/ale'                                                 " Asynchronous Lint Engine
 Plug 'scrooloose/nerdcommenter'                                 " Vim plugin for intensely orgasmic commenting
 Plug 'SirVer/ultisnips'                                         " Snippets made easy (<Tab>)
