@@ -127,7 +127,7 @@ inoremap <F12> <esc>:set list!<CR>a
 
 " -----------------------------------------------------------------------------
 " LaTex config
-let g:tex_conceal="ab"                          " Latex conceal
+let g:tex_conceal="a"                          " Latex conceal
 " let g:Tex_DefaultTargetFormat = 'pdf'
 " let g:Tex_CompileRule_pdf = 'latexmk'
 " " let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -interaction=nonstopmode -shell-escape -file-line-error -output-directory=build $*'
