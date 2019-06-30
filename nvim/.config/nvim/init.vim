@@ -161,9 +161,7 @@ let g:deoplete#omni#input_patterns.tex = '\\(?:'
 " -----------------------------------------------------------------------------
 " ale config
 let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'latex': ['latexindent'],
-\   'tex': ['latexindent'],
+\   'tex': ['remove_trailing_lines', 'trim_whitespace', 'latexindent'],
 \}
 
 
