@@ -161,7 +161,17 @@ let g:deoplete#omni#input_patterns.tex = '\\(?:'
 " -----------------------------------------------------------------------------
 " ale config
 let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'tex': ['remove_trailing_lines', 'trim_whitespace'],
+\   'cpp': ['remove_trailing_lines', 'trim_whitespace', 'clang-format', 'uncrustify'],
 \}
 
+" -----------------------------------------------------------------------------
+" config for deoplete-clanx
 
+" Change clang binary path
+call deoplete#custom#var('clangx', 'clang_binary', '/usr/bin/clang')
+
+" Change clang options
+call deoplete#custom#var('clangx', 'default_c_options', '')
+call deoplete#custom#var('clangx', 'default_cpp_options', '')
