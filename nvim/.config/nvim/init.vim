@@ -164,6 +164,7 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'tex': ['remove_trailing_lines', 'trim_whitespace'],
 \   'cpp': ['remove_trailing_lines', 'trim_whitespace', 'clang-format', 'uncrustify'],
+\   'hpp': ['remove_trailing_lines', 'trim_whitespace', 'clang-format', 'uncrustify'],
 \}
 
 " -----------------------------------------------------------------------------
