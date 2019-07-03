@@ -167,6 +167,8 @@ let g:ale_fixers = {
 \   'hpp': ['remove_trailing_lines', 'trim_whitespace', 'clang-format', 'uncrustify'],
 \}
 
+let g:ale_cpp_clangcheck_options = '-I include'
+
 " -----------------------------------------------------------------------------
 " config for deoplete-clanx
 
