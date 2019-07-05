@@ -63,8 +63,8 @@ let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 set autoindent                                  " Take indent for new line from previous line
 set smarttab                                    " use 'shiftwidth' when inserting <Tab>
 set expandtab                                   " use spaces when <Tab> is inserted
-set tabstop=4                                   " number of spaces that <Tab> in file uses
-set shiftwidth=4                                " Number of spaces to use for each step of (auto)indent
+set tabstop=2                                   " number of spaces that <Tab> in file uses
+set shiftwidth=2                                " Number of spaces to use for each step of (auto)indent
 set conceallevel=2                              " whether concealable text is shown or hidden
 
 " -----------------------------------------------------------------------------
