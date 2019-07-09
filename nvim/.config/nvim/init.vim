@@ -53,7 +53,7 @@ let g:NERDTrimTrailingWhitespace = 1            " Enable trimming of trailing wh
 let g:deoplete#enable_at_startup=1              " enable deoplete
 let g:deoplete#auto_complete_delay=100          " delay completion
 let g:deoplete#enable_smart_case=1              " no ignore case when pattern has uppercase
-let g:deoplete#min_pattern_length=3             " number of input completion 
+let g:deoplete#min_pattern_length=3             " number of input completion
 let g:UltiSnipsExpandTrigger="<TAB>"
 let g:UltiSnipsJumpForwardTrigger="<TAB>"
 let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
@@ -164,10 +164,14 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'tex': ['remove_trailing_lines', 'trim_whitespace'],
 \   'cpp': ['remove_trailing_lines', 'trim_whitespace', 'clang-format', 'uncrustify'],
-\   'hpp': ['remove_trailing_lines', 'trim_whitespace', 'clang-format', 'uncrustify'],
 \}
 
-let g:ale_cpp_clangcheck_options = '-I include'
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+\'cpp' : ['clang', 'gcc', 'clangcheck'],
+\'tex' : ['chktex', 'lacheck']
+\}
+let g:ale_cpp_clangcheck_options = '-- -Iinclude'
 let g:ale_fix_on_save = 1
 
 " -----------------------------------------------------------------------------
