@@ -58,6 +58,10 @@ let g:UltiSnipsExpandTrigger="<TAB>"
 let g:UltiSnipsJumpForwardTrigger="<TAB>"
 let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
 
+" Python provider
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
+
 " -----------------------------------------------------------------------------
 " Edit setting
 set autoindent                                  " Take indent for new line from previous line
@@ -157,6 +161,10 @@ let g:deoplete#omni#input_patterns.tex = '\\(?:'
     \ . '|documentclass(\s*\[[^]]*\])?\s*\{[^}]*'
     \ . '|\w*'
 \ .')'
+
+" -----------------------------------------------------------------------------
+" ultisnips config
+let g:UltiSnipsUsePythonVersion = 3
 
 " -----------------------------------------------------------------------------
 " ale config
