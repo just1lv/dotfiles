@@ -171,11 +171,13 @@ let g:UltiSnipsUsePythonVersion = 3
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'tex': ['remove_trailing_lines', 'trim_whitespace'],
+\   'c': ['remove_trailing_lines', 'trim_whitespace', 'clang-format', 'uncrustify'],
 \   'cpp': ['remove_trailing_lines', 'trim_whitespace', 'clang-format', 'uncrustify'],
 \}
 
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
+\'c' : ['clang', 'gcc', 'clangcheck'],
 \'cpp' : ['clang', 'gcc', 'clangcheck'],
 \'tex' : ['chktex', 'lacheck']
 \}
